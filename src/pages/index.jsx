@@ -1,0 +1,6 @@
+export {default as Dashboard} from "./Dashboard"
+export {default as Companies} from "./Companies"
+export {default as Application} from "./Application"
+export {default as Profile} from "./Profile"
+export {default as SearchJob} from "./SearchJob"
+export {default as Statics} from "./Statics"

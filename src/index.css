@@ -1,0 +1,150 @@
+@tailwind base;
+
+@layer base {
+  html {
+    @apply bg-body font-poppins;
+  }
+}
+
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .activeNav {
+    @apply bg-body font-semibold text-dark [&_svg_path]:fill-primary;
+  }
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+.widget-1 {
+  background-color: #4e36e2;
+}
+.widget-2 {
+  background-color: #48a9f8;
+}
+.widget-3 {
+  background-color: #1bd084;
+}
+.widget-4 {
+  background-color: #8bc740;
+}
+
+/* scrollbar */
+
+@media (min-width: 992px) {
+  ::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+    border-radius: 3px;
+    scrollbar-gutter: stable;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 3px;
+    height: 3px;
+    border-radius: 2px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #40189d;
+    border-radius: 50px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #e9e0ff;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #7878a3;
+  }
+}
+
+
+
+
+.status-pending {
+  color: #b1b1b1;
+  border-color: #b1b1b1;
+}
+.status-on-hold {
+  color: #ff9548;
+  border-color: #ff9548;
+}
+.status-candidate {
+  color: white;
+  border-color: #2bc155;
+  background-color: #2bc155;
+}
+
+.custom-legend-following {
+  background-color: #374c98;
+}
+
+.custom-legend-followers {
+  background-color: #ffab2d;
+}
+
+.custom-legend-following {
+  background-color: #374c98;
+}
+
+.custom-legend-sent {
+  background-color: #2bc155;
+}
+
+.custom-legend-answered {
+  background-color: #ff9b52;
+}
+
+.custom-legend-hired {
+  background-color: #3f9ae0;
+}
+
+/* loader */
+
+@layer components {
+  .loader {
+    width: 45px;
+    aspect-ratio: 0.75;
+    --c: no-repeat linear-gradient(theme(colors.primary) 0 0);
+    background:
+      var(--c) 0% 50%,
+      var(--c) 50% 50%,
+      var(--c) 100% 50%;
+    background-size: 20% 50%;
+    animation: loading 1s infinite linear;
+  }
+
+  @keyframes loading {
+    20% {
+      background-position:
+        0% 0%,
+        50% 50%,
+        100% 50%;
+    }
+
+    40% {
+      background-position:
+        0% 100%,
+        50% 0%,
+        100% 50%;
+    }
+
+    60% {
+      background-position:
+        0% 50%,
+        50% 100%,
+        100% 0%;
+    }
+
+    80% {
+      background-position:
+        0% 50%,
+        50% 50%,
+        100% 100%;
+    }
+  }
+}
