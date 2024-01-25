@@ -23,7 +23,7 @@ function Header() {
     if (isSmallOpen) icon = <ToggleButton />;
     else icon = <ArrowIcon />;
   } else {
-    if (!isLargeOpen) icon = <ToggleButton />;
+    if (isLargeOpen) icon = <ToggleButton />;
     else icon = <ArrowIcon />;
   }
 
