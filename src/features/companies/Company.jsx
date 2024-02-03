@@ -14,7 +14,7 @@ function Company({ variant = "default", company }) {
       onClick={() => handleSelectCompany(company.id)}
       className={`${
         variant === "featured" ? "p-[30px]" : "px-8 pt-9 pb-6"
-      } min-w-[200px] cursor-pointer rounded-[28px] bg-white`}
+      } min-w-[200px] cursor-pointer rounded-[28px] bg-card`}
     >
       <div
         className={`${
@@ -23,15 +23,15 @@ function Company({ variant = "default", company }) {
       >
         <Logo src={company.logo} w={60} h={60} />
         <div className={variant === "featured" ? "" : "text-center"}>
-          <h5 className="text-dark font-semibold text-base mb-[10px]">
+          <h5 className="text-dark font-semibold text-base mb-[10px] dark:text-white">
             {company.name}
           </h5>
           {variant === "featured" ? (
-            <p className="text-base text-primary font-medium">
+            <p className="text-base text-primary font-medium dark:text-gray-200">
               {company.vacancies.length} Vacancies
             </p>
           ) : (
-            <p className="text-sm text-gray-900">Internet Service Porvider</p>
+            <p className="text-sm text-gray-900 dark:text-gray-200">Internet Service Porvider</p>
           )}
         </div>
       </div>

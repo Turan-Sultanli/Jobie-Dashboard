@@ -30,7 +30,7 @@ const jobTrendsData = [
 
 function JobTrends() {
   return (
-    <article className="p-[36px_36px_42px] rounded-[20px] bg-white xl:col-[4/7] xl:row-[4/-1] lg:col-[3/-1] lg:row-[5/-1]">
+    <article className="p-[36px_36px_42px] rounded-[20px] bg-card xl:col-[4/7] xl:row-[4/-1] lg:col-[3/-1] lg:row-[5/-1]">
       <div className="flex items-center justify-between">
         <Title>Job Trends</Title>
         <button>

@@ -2,7 +2,7 @@ import FeaturedCompanies from "./FeaturedCompanies";
 import RecommendedJobs from "./RecommendedJobs";
 import VacancyStats from "./VacancyStats";
 import Widgets from "./Widgets";
-import UserActivity from "./userActivity";
+import UserActivity from "./UserActivity";
 
 function DashboardLayout() {
   return (

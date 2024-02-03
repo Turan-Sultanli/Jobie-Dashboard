@@ -7,6 +7,9 @@ import StaticsIcon from "../assets/icons/StaticsIcon";
 import UserIcon from "../assets/icons/UserIcon";
 import { useSidebarContext } from "../contexts/SidebarProvider";
 import MainLogo from "../shared/MainLogo";
+import { useDarkMode } from "../contexts/ThemeProvider";
+import MoonIcon from "../assets/icons/MoonIcon";
+import SunIcon from "../assets/icons/SunIcon";
 
 const sidebarNavigation = [
   {
@@ -43,9 +46,12 @@ const sidebarNavigation = [
 
 function Sidebar() {
   const { pathname } = useLocation();
+  const { isDarkMode } = useDarkMode();
 
   const { isScreenSmall, isLargeOpen, isSmallOpen, close } =
     useSidebarContext();
+
+  const { toggleDarkMode } = useDarkMode();
 
   let classNames;
 
@@ -69,12 +75,19 @@ function Sidebar() {
          flex-col gap-6 overflow-hidden bg-primary  text-white transition duration-300`}
       >
         {!isScreenSmall && (
-          <div className="py-7 pl-[14px]">
-            <MainLogo />
-          </div>
+          <Link to='dashboard'>
+            <div className="pl-[14px] pt-7">
+              <MainLogo />
+            </div>
+          </Link>
         )}
         <nav>
           <ul className="flex flex-col gap-[10px] ">
+            <li>
+              <button onClick={toggleDarkMode} className="pb-7 pl-8">
+                {isDarkMode ? <SunIcon /> : <MoonIcon />}
+              </button>
+            </li>
             {sidebarNavigation.map((nav) => {
               const isActive = pathname.slice(1) === nav.path;
               return (
@@ -84,9 +97,11 @@ function Sidebar() {
                     className={`${
                       isActive ? "activeNav" : ""
                     } hover:activeNav group flex gap-11 rounded-l-[48px] bg-primary py-[26px] pl-7
-                font-medium  text-gray-200 [&_path]:fill-gray-200 [&_svg]:h-7 [&_svg]:w-7 `}
+                font-medium  text-gray-200 dark:text-white dark:hover:text-white [&_path]:fill-gray-200 [&_svg]:h-7 [&_svg]:w-7 `}
                   >
-                    <span className=" group-hover:activeNav">{nav.icon}</span>
+                    <span className=" group-hover:activeNav dark:">
+                      {nav.icon}
+                    </span>
                     <span className="whitespace-nowrap text-lg">
                       {nav.label}
                     </span>
@@ -96,8 +111,8 @@ function Sidebar() {
             })}
           </ul>
         </nav>
-        {true && (
-          <div className="mb-8 mt-auto pl-[44px]">
+        {isLargeOpen && (
+          <div className="mb-8 mt-auto hidden pl-[44px] md:block">
             <p className="whitespace-nowrap text-xs font-semibold leading-[18px] text-primary-600 ">
               Jobie Job Portal Admin Dashboard
             </p>

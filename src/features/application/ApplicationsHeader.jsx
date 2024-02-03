@@ -24,27 +24,32 @@ const appOptions = [
 function ApplicationsHeader() {
   return (
     <header>
-      <div className="flex justify-between flex-wrap items-center gap-4">
-        <div className="flex  xl:gap-20 lg:gap-16 md:gap-12 sm:gap-8 gap-4 flex-wrap items-center">
+      <div className="flex flex-wrap items-center justify-between gap-4">
+        <div className="flex  flex-wrap items-center gap-4 sm:gap-8 md:gap-12 lg:gap-16 xl:gap-20">
           <div>
-            <h3 className="font-semibold text-base">Showing 45 Applicants</h3>
+            <h3 className="text-base font-semibold dark:text-white">
+              Showing 45 Applicants
+            </h3>
             <p className="text-sm text-gray-300">Based your preferences</p>
           </div>
           <FilterTabs filterField={"status"} options={appOptions} />
         </div>
         <div
-          className="relative [&_svg]:absolute [&_svg:first-child]:left-4 [&_svg:first-child]:bottom-4
-           [&_svg:last-child]:right-4 [&_svg:last-child]:top-4 [&_svg:last-child>path]:stroke-primary flex flex-wrap  "
+          className="relative flex flex-wrap "
         >
-          <SelectDownIcon />
+          <span className="absolute left-4 bottom-4">
+            <SelectDownIcon />
+          </span>
           <select
-            className="px-[52px] py-4 rounded-[48px] border border-solid border-primary-300 appearance-none
-               text-base font-medium text-gray-700 focus:outline-primary bg-transparent"
+            className="appearance-none rounded-[48px] border border-solid border-primary-300 bg-transparent px-[52px]
+               py-4 text-base font-medium text-gray-700 focus:outline-primary dark:text-gray-200"
           >
             <option>Newest</option>
             <option>Oldest</option>
           </select>
-          <Chevron />
+          <span className="absolute right-4 top-4">
+            <Chevron />
+          </span>
         </div>
       </div>
     </header>

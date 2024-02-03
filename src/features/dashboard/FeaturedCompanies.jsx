@@ -9,7 +9,7 @@ function FeaturedCompanies() {
         <Title>Featured Companies</Title>
         <div className="flex items-center gap-11">
           <div
-            className="pagination-position [&>.swiper-pagination-bullet-active]:bg-primary
+            className=" pagination-position [&>.swiper-pagination-bullet-active]:bg-primary 
             [&>.swiper-pagination-bullet:not(.swiper-pagination-bullet-active)]:bg-gray-400 [&>*]:w-3 [&>*]:h-3 hidden lg:block"
           ></div>
           <ViewMore />

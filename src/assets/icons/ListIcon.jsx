@@ -1,6 +1,6 @@
 function ListIcon() {
   return (
-    <svg
+    <svg className="dark:[&_path]:fill-gray-200"
       xmlns="http://www.w3.org/2000/svg"
       width={24}
       height={24}

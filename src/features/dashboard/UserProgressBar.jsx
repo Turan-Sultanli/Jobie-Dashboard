@@ -1,4 +1,5 @@
 import { CircularProgressbar } from "react-circular-progressbar";
+import { useDarkMode } from "../../contexts/ThemeProvider";
 
 const progressBarStyles = {
   // Customize the root svg element
@@ -44,9 +45,11 @@ const progressBarStyles = {
 function UserProgressBar({ progress, variant = "user" }) {
   const isJobTrends = variant === "jobTrends";
 
+  const { isDarkMode } = useDarkMode()
+
   return (
     <div
-      className={`w-full ${isJobTrends ? "grid gap-3 grid-cols-1 justify-items-center xs:grid-cols-2 xs:grid-rows-2 sm:grid-cols-4 sm:grid-rows-1 md:grid-cols-4 md:grid-rows-1 lg:grid-cols-2 lg:grid-rows-2" : "flex items-center justify-between"} `}
+      className={`w-full ${isJobTrends ? "grid grid-cols-1 justify-items-center gap-3 xs:grid-cols-2 xs:grid-rows-2 sm:grid-cols-4 sm:grid-rows-1 md:grid-cols-4 md:grid-rows-1 lg:grid-cols-2 lg:grid-rows-2" : "flex items-center justify-between"} `}
     >
       {progress?.map((data) => {
         let color;
@@ -67,7 +70,7 @@ function UserProgressBar({ progress, variant = "user" }) {
 
         return (
           <div
-            className={`${isJobTrends ? "col-span-1 px-12 xs:px-0" : "h-fit max-h-[120px] w-fit max-w-[120px] flex-1"} relative p-2`}
+            className={`${isJobTrends ? "col-span-1 px-12 xs:px-0" : "h-fit max-h-[120px] w-fit max-w-[120px] flex-1"} relative p-2 dark:text-white`}
             key={data.id}
           >
             <CircularProgressbar
@@ -81,6 +84,10 @@ function UserProgressBar({ progress, variant = "user" }) {
                   width: isJobTrends ? 110 : "auto",
                 },
                 path: { ...progressBarStyles.path, stroke: color },
+                text: {
+                  ...progressBarStyles.text,
+                  fill: isDarkMode ? "#fff" : "#000",
+                },
               }}
             />
             <div

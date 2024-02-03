@@ -2,17 +2,24 @@ import RingICon from "../assets/icons/RingICon";
 import ChatICon from "../assets/icons/ChatIcon";
 import SearchIcon from "../assets/icons/SearchIcon";
 import ToggleButton from "../assets/icons/ToggleButton";
-import  profile from "../assets/images/profile.jpg";
-// import HeaderProfil from "../assets/icons/HeaderProfil";
+import profile from "../assets/images/profile.jpg";
 import { useLocation } from "react-router-dom";
 import { useSidebarContext } from "../contexts/SidebarProvider";
 import MainLogo from "../shared/MainLogo";
 import ArrowIcon from "../assets/icons/ArrowIcon";
+import { useState } from "react";
+import DropDownMenu from "../shared/DropDownMenu";
 
 function Header() {
   const { pathname } = useLocation();
 
-  const title = pathname.slice(1).replace("-", " ");
+  const [isOpen, setIsOpen] = useState(false);
+
+  function handleClose() {
+    setIsOpen(false);
+  }
+
+  const title = pathname.split('/')[2]?.replace("-", " ");
 
   const { toggle, isScreenSmall, isSmallOpen, isLargeOpen } =
     useSidebarContext();
@@ -29,7 +36,7 @@ function Header() {
 
   return (
     <header
-      className="relative z-50 col-start-2 col-end-2 row-start-1 row-end-2 flex justify-between bg-body px-4 py-2
+      className="relative z-10 col-start-2 col-end-2 row-start-1 row-end-2 flex justify-between bg-body px-4 py-2
      sm:px-6 md:rounded-tl-[48px]  md:px-8 md:py-4 lg:px-10 lg:py-6 xl:px-12 xl:py-8"
     >
       {isScreenSmall && (
@@ -38,10 +45,13 @@ function Header() {
         </div>
       )}
       <div className="absolute left-[88px] top-1/2 flex -translate-y-1/2 flex-row items-center gap-3 md:static md:translate-y-0 lg:gap-7 xl:gap-9 xxl:gap-11">
-        <button className="border-none bg-transparent " onClick={toggle}>
+        <button
+          className="border-none bg-transparent dark:[&_path]:fill-white"
+          onClick={toggle}
+        >
           {icon}
         </button>
-        <h1 className="hidden text-heading font-semibold capitalize md:block">
+        <h1 className="hidden text-heading font-semibold capitalize md:block dark:text-white">
           {title}
         </h1>
       </div>
@@ -57,7 +67,7 @@ function Header() {
             name="headerSearch"
             type="text"
             placeholder="Search something here..."
-            className="h-14 w-full min-w-[300px]  rounded-[82px] bg-gray-100 px-[36px] py-4 text-base leading-6 placeholder:text-gray-500"
+            className="h-14 w-full min-w-[300px] rounded-[82px]  bg-gray-100 px-[36px] py-4 text-base leading-6 placeholder:text-gray-500 dark:bg-button dark:placeholder:text-gray-200"
           />
           <button className="absolute bottom-3 right-8 top-3">
             <SearchIcon />
@@ -77,16 +87,22 @@ function Header() {
             </span>
           </button>
         </div>
-        <div className="flex items-center gap-4 sm:gap-2 lg:gap-4 xl:gap-6 xxl:gap-8 ">
-          <img src={profile} alt="profile" className="rounded-full" />
-          <div>
-            <h3 className="hidden whitespace-nowrap text-base font-semibold leading-6 sm:block">
-              Oda Dink
-            </h3>
-            <span className="hidden whitespace-nowrap text-sm leading-[18px] text-gray-300 sm:block">
-              Super Admin
-            </span>
+        <div className="relative ">
+          <div
+            className="flex items-center gap-4 sm:gap-2 lg:gap-4 xl:gap-6 xxl:gap-8 "
+            onClick={() => setIsOpen((open) => !open)}
+          >
+            <img src={profile} alt="profile" className="rounded-full" />
+            <div>
+              <h3 className="hidden whitespace-nowrap text-base font-semibold leading-6 sm:block dark:text-white ">
+                Oda Dink
+              </h3>
+              <span className="hidden whitespace-nowrap text-sm leading-[18px] text-gray-300 sm:block dark:text-white">
+                Super Admin
+              </span>
+            </div>
           </div>
+          {isOpen && <DropDownMenu close={handleClose} />}
         </div>
       </div>
     </header>

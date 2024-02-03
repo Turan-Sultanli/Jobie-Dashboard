@@ -7,9 +7,9 @@ function VacancyStats() {
   const [timePeriod, setTimePeriod] = useState("year");
 
   return (
-    <div className="min-h-[490px] rounded-[20px] bg-white p-[26px_26px_30px_30px] sm:col-[1/-1] sm:row-[5/6] lg:col-[2/-1] lg:row-[2/3]">
+    <div className="min-h-[490px] rounded-[20px] bg-card p-[26px_26px_30px_30px] sm:col-[1/-1] sm:row-[5/6] lg:col-[2/-1] lg:row-[2/3]">
       <form className="flex flex-wrap items-center justify-between gap-1 md:gap-2 lg:gap-3">
-        <h3 className="whitespace-nowrap text-[20px] font-medium leading-[30px] ">
+        <h3 className="whitespace-nowrap text-[20px] font-medium leading-[30px] dark:text-white">
           Vacancy Stats
         </h3>
         <div className="flex flex-wrap items-center md:gap-2 lg:gap-3">

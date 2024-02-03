@@ -19,7 +19,6 @@ function SearchJobsOperations() {
     setQuery(value);
   }
 
-  
   return (
     <>
       <SearchJobsHeader>
@@ -31,10 +30,12 @@ function SearchJobsOperations() {
         <Tabs />
         <div className="mt-6 flex flex-wrap justify-between md:mt-8 lg:mt-10 xl:mt-16">
           <div>
-            <h4 className="text-base font-semibold">
+            <h4 className="text-base font-semibold dark:text-white">
               Showing 246 Jobs Results
             </h4>
-            <p className="text-sm text-gray-300">Based your preferences</p>
+            <p className="text-sm text-gray-300 dark:text-gray-300">
+              Based your preferences
+            </p>
           </div>
           <div className="flex flex-wrap gap-2 sm:gap-4 md:gap-6 lg:gap-8 xl:gap-10 ">
             <div className="flex flex-wrap items-center">
@@ -44,18 +45,21 @@ function SearchJobsOperations() {
               <SwitchBtn label="Salary" id={"salary"} checked={true} />
             </div>
             <div
-              className="relative [&_svg:first-child]:bottom-4 [&_svg:first-child]:left-4 [&_svg:last-child>path]:stroke-primary
-           [&_svg:last-child]:right-4 [&_svg:last-child]:top-4 [&_svg]:absolute  "
+              className="relative"
             >
-              <SelectDownIcon />
+              <span className="absolute bottom-4 left-4 dark:[&_path]:fill-gray-100 [&_path]:fill-primary">
+                <SelectDownIcon />
+              </span>
               <select
                 className="appearance-none rounded-[48px] border border-solid border-primary-300 bg-transparent px-[52px]
-               py-4 text-base font-medium text-gray-700 focus:outline-primary"
+               py-4 text-base font-medium text-gray-700 focus:outline-primary dark:text-white"
               >
                 <option>Newest</option>
                 <option>Oldest</option>
               </select>
-              <Chevron />
+              <span className="absolute right-4 top-4 dark:[&_path]:stroke-gray-100 [&_path]:stroke-primary">
+                <Chevron />
+              </span>
             </div>
             <div className="flex items-center">
               <LayoutButtons />

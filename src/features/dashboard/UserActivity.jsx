@@ -89,7 +89,7 @@ function UserActivity() {
   );
 
   return (
-    <div className="flex h-min flex-col gap-3 rounded-[20px] bg-white sm:col-[1/-1] sm:row-[4/5] sm:flex-row sm:gap-0 lg:col-[1/2] lg:row-[2/3] lg:flex-col">
+    <div className="flex h-min flex-col gap-3 rounded-[20px] bg-card sm:col-[1/-1] sm:row-[4/5] sm:flex-row sm:gap-0 lg:col-[1/2] lg:row-[2/3] lg:flex-col">
       <div className="basis-5/12 p-[36px_40px_26px]">
         <div className="flex flex-col items-center">
           <div className=" grid h-[132px] w-[132px] place-content-center overflow-hidden rounded-full bg-gradient-to-r from-primary to-fuchsia-600 p-4">
@@ -104,11 +104,11 @@ function UserActivity() {
             </div>
           </div>
           <div>
-            <h3 className="mt-5 text-[22px] font-medium leading-8">
-              {" "}
+            <h3 className="mt-5 text-[22px] font-medium leading-8 dark:text-white">
+             
               Oda Dink
             </h3>
-            <span className="text-base leading-6 text-gray-900">
+            <span className="text-base leading-6 text-gray-900 dark:text-white">
               Programmer
             </span>
           </div>
@@ -119,23 +119,23 @@ function UserActivity() {
       </div>
 
       <div className="relative basis-7/12 rounded-[20px] p-[26px]">
-        <h3 className="mb-[22px] text-lg font-medium">Recent Activities</h3>
+        <h3 className="mb-[22px] text-lg font-medium dark:text-white">Recent Activities</h3>
         <ul
           className={`custom-scrollbar flex flex-col gap-4 overflow-auto transition-all duration-300 lg:overflow-hidden ${
-            !show ? "h-[400px]" : "h-[500px] overflow-y-auto"
+            !show ? "h-[420px]" : "h-[510px] overflow-y-auto"
           } `}
         >
           {formattedActivities.map((activity) => {
             return (
               <li className="flex items-center gap-4" key={activity.id}>
-                <div className="rounded-[20px] border border-gray-200 p-[18px]">
+                <div className="rounded-[20px] border border-gray-200 p-[18px] dark:border-white">
                   {activity.icon}
                 </div>
                 <div>
-                  <p className="mb-2 font-semibold leading-5 text-gray-600  ">
+                  <p className="mb-2 font-semibold leading-5 text-gray-600 dark:text-gray-200 ">
                     {activity.body}
-                    <strong className="text-gray-800 ">
-                      {activity.vacancyCount} Vacancy
+                    <strong className="text-gray-800 dark:text-white">
+                    {""}  {activity.vacancyCount} Vacancy
                     </strong>
                   </p>
                   <span className="text-gray-300">
@@ -148,12 +148,12 @@ function UserActivity() {
         </ul>
         <button
           onClick={() => setShow((show) => !show)}
-          className={`absolute left-0 right-0 z-[1] mx-auto hidden h-[60px] w-[60px] place-content-center  
+          className={`dark:bg-button dark:[&_path]:fill-white absolute left-0 right-0 z-[1] mx-auto hidden h-[60px] w-[60px] place-content-center  
         overflow-y-auto rounded-full bg-white shadow-[0px_12px_24px_0_rgba(0,0,0,0.25)] transition-all duration-500 lg:grid lg:overflow-hidden  ${
           show ? "rotate-180 " : ""
         }`}
         >
-          <span className="[&>svg]:rotate-[-90]">
+          <span className="[&>svg]:rotate-[-90] ">
             <ArrowIcon />
           </span>
         </button>

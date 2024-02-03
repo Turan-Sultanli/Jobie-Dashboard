@@ -3,9 +3,12 @@ import Header from "./Header";
 import Sidebar from "./Sidebar";
 
 function AppLayout() {
+  
+
+
   return (
     <div
-      className={`grid h-screen grid-cols-[auto_1fr] grid-rows-[auto_1fr] transition-all duration-300`}
+      className="grid h-screen grid-cols-[auto_1fr] grid-rows-[auto_1fr] transition-all duration-300 max-w-[120rem] mx-auto"
     >
       <Sidebar />
       <Header />

@@ -13,10 +13,10 @@ function ApplicationsTable() {
 
   return (
     <div className="grid ">
-      <div className="bg-white rounded-[20px] xl:mt-10 lg:mt-8 mt-6 h-fit overflow-auto  ">
+      <div className="bg-card rounded-[20px] xl:mt-10 lg:mt-8 mt-6 h-fit overflow-auto  ">
         <table className="w-full min-w-[1200px] border-collapse border-spacing-0  [&_tr]:border-b [&_tr]:border-b-solid [&_tr]:border-b-gray-100 ">
-          <thead className="text-lg">
-            <tr className="[&>th]:font-medium text-left [&>th]:py-8 ">
+          <thead className="text-lg ">
+            <tr className="[&>th]:font-medium text-left [&>th]:py-8 dark:[&_th]:text-gray-100">
               <th className="pl-10">
                 <input type="checkbox" name="" id="" />
               </th>
@@ -33,7 +33,7 @@ function ApplicationsTable() {
             {applications.map((app) => {
               const company = app.vacancies.companies;
               return (
-                <tr key={app.id} className="[&>td]:py-8">
+                <tr key={app.id} className="[&>td]:py-8 dark:[&_td]:text-gray-200">
                   <td className="pl-10">
                     <input type="checkbox" name="" id="" />
                   </td>

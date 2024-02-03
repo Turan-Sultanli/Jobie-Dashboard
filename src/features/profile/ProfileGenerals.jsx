@@ -29,7 +29,7 @@ function ProfileGenerals() {
 
   return (
     <div>
-      <h4 className="relative font-semibold text-lg uppercase xl:mb-7 lg:mb-5 md:mb-3 mb-2">
+      <h4 className="relative font-semibold text-lg uppercase xl:mb-7 lg:mb-5 md:mb-3 mb-2 dark:text-gray-100">
         Generals
       </h4>
       <div className="flex flex-col gap-7">
@@ -37,7 +37,7 @@ function ProfileGenerals() {
           <div className="flex   flex-col xl:gap-9 lg:gap-7 md:gap-5 sm:gap-3 gap-2 grow">
             <label
               htmlFor="firstname"
-              className="font-medium text-base text-gray-750"
+              className="font-medium text-base text-gray-750 dark:text-gray-200 "
             >
               First Name
             </label>
@@ -48,14 +48,14 @@ function ProfileGenerals() {
               type="text"
               id="firstname"
               placeholder="name"
-              className="w-full placeholder:text-gray-200 border-b border-solid border-gray-300 pb-5 px-[2px] 
+              className="bg-card w-full text-white placeholder:text-gray-200 border-b border-solid border-gray-300 pb-5 px-[2px] 
             focus:outline-none focus:border-primary hover:border-primary text-lg font-medium"
             />
           </div>
           <div className="flex  flex-col xl:gap-9 lg:gap-7 md:gap-5 sm:gap-3 gap-2 grow">
             <label
               htmlFor="middle"
-              className="font-medium text-base text-gray-750"
+              className="font-medium text-base text-gray-750 dark:text-gray-200"
             >
               Middle Name
             </label>
@@ -66,14 +66,14 @@ function ProfileGenerals() {
               type="text"
               id="middle"
               placeholder="Type here"
-              className="w-full placeholder:text-gray-200 border-b border-solid border-gray-300 pb-5 px-[2px] 
+              className="bg-card w-full text-white placeholder:text-gray-200 border-b border-solid border-gray-300 pb-5 px-[2px] 
             focus:outline-none focus:border-primary hover:border-primary text-lg font-medium"
             />
           </div>
           <div className="flex  flex-col xl:gap-9 lg:gap-7 md:gap-5 sm:gap-3 gap-2 grow">
             <label
               htmlFor="lastName"
-              className="font-medium text-base text-gray-750"
+              className="font-medium text-base text-gray-750 dark:text-gray-200"
             >
               Last Name
             </label>
@@ -84,7 +84,7 @@ function ProfileGenerals() {
               type="text"
               id="lastName"
               placeholder="last name"
-              className="w-full placeholder:text-gray-200 border-b border-solid border-gray-300 pb-5 px-[2px] 
+              className="bg-card w-full text-white placeholder:text-gray-200 border-b border-solid border-gray-300 pb-5 px-[2px] 
             focus:outline-none focus:border-primary hover:border-primary text-lg font-medium"
             />
           </div>
@@ -93,7 +93,7 @@ function ProfileGenerals() {
           <div className="flex  flex-col xl:gap-9 lg:gap-7 md:gap-5 sm:gap-3 gap-2 grow">
             <label
               htmlFor="username"
-              className="font-medium text-base text-gray-750"
+              className="font-medium text-base text-gray-750 dark:text-gray-200"
             >
               Username
             </label>
@@ -105,14 +105,14 @@ function ProfileGenerals() {
               type="text"
               id="username"
               placeholder="username"
-              className="w-full placeholder:text-gray-200 border-b border-solid border-gray-300 pb-5 px-[2px] 
+              className="bg-card w-full text-white placeholder:text-gray-200 border-b border-solid border-gray-300 pb-5 px-[2px] 
             focus:outline-none focus:border-primary hover:border-primary text-lg font-medium"
             />
           </div>
           <div className="flex  flex-col xl:gap-9 lg:gap-7 md:gap-5 sm:gap-3 gap-2 grow relative">
             <label
               htmlFor="password"
-              className="font-medium text-base text-gray-750"
+              className="font-medium text-base text-gray-750 dark:text-gray-200"
             >
               Password
             </label>
@@ -123,13 +123,13 @@ function ProfileGenerals() {
               type={showPasswordField ? "text" : "password"}
               id="password"
               placeholder="password"
-              className="w-full placeholder:text-gray-200 border-b border-solid border-gray-300 pb-5 px-[2px] 
+              className="bg-card w-full text-white placeholder:text-gray-200 border-b border-solid border-gray-300 pb-5 px-[2px] 
             focus:outline-none focus:border-primary hover:border-primary text-lg font-medium"
             />
             <button
               type="button"
               onClick={() => handleTogglePasswords("password")}
-              className="absolute bottom-[24px]  right-[24px] bg-transparent border-none text-primary text-lg font-semibold 
+              className="absolute bottom-[24px]  right-[24px] bg-transparent border-none text-primary dark:text-gray-200 text-lg font-semibold 
                 outline-none"
             >
               {showPasswordField ? "Hide" : "Show"}
@@ -138,7 +138,7 @@ function ProfileGenerals() {
           <div className="flex  flex-col xl:gap-9 lg:gap-7 md:gap-5 sm:gap-3 gap-2 grow relative">
             <label
               htmlFor="confirmPassword"
-              className="font-medium text-base text-gray-750"
+              className="font-medium text-base text-gray-750 dark:text-gray-200"
             >
               Re-Type Password
             </label>
@@ -149,13 +149,13 @@ function ProfileGenerals() {
               type={showConfirmPasswordField ? "text" : "password"}
               id="confirmPassword"
               placeholder="password"
-              className="w-full placeholder:text-gray-200 border-b border-solid border-gray-300 pb-5 px-[2px] 
+              className="bg-card w-full text-white placeholder:text-gray-200 border-b border-solid border-gray-300 pb-5 px-[2px] 
             focus:outline-none focus:border-primary hover:border-primary text-lg font-medium "
             />
             <button
               type="button"
               onClick={() => handleTogglePasswords("confirmPassword")}
-              className="absolute bottom-[24px]  right-[24px] bg-transparent border-none text-primary text-lg font-semibold 
+              className="absolute bottom-[24px]  right-[24px] bg-transparent border-none text-primary dark:text-gray-200 text-lg font-semibold 
                 outline-none"
             >
               {showConfirmPasswordField ? "Hide" : "Show"}

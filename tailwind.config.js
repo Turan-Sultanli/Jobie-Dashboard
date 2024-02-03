@@ -1,6 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
+  darkMode: "class",
   theme: {
     extend: {
       colors: {
@@ -15,6 +16,11 @@ export default {
         "gray-800": "#3D3D3D",
         "gray-900": "#000000B2",
 
+        card: "var(--card-clr)",
+        body: "var(--bg-body-clr)",
+        button: "var(--button-clr)",
+        loader:"var(--loader-clr)",
+
         dark: "#292929",
 
         primary: "#40189D",
@@ -22,7 +28,6 @@ export default {
         "primary-600": "#9B70FF",
         "primary-700": "#7649E0",
 
-        body: "#F2F2F2",
 
         "secondary-400": "#FFCD5B",
         "secondary-500": "#FFC132",

@@ -11,8 +11,23 @@
 
 @layer utilities {
   .activeNav {
-    @apply bg-body font-semibold text-dark [&_svg_path]:fill-primary;
+    @apply bg-body font-semibold text-dark [&_svg_path]:fill-primary dark:[&_svg_path]:fill-gray-200;
   }
+}
+
+:root {
+  --primary-clr:#40189D;
+  --gray-clr: #BFBFBF;
+  --card-clr: #fff;
+  --bg-body-clr: #f2f2f2;
+  --loader-clr:var(--primary-clr);
+}
+
+:root.dark {
+  --card-clr: #28253b;
+  --bg-body-clr: #251e35;
+  --button-clr: #333a54;
+  --loader-clr:var(--gray-clr);
 }
 
 body {
@@ -62,9 +77,6 @@ body {
   }
 }
 
-
-
-
 .status-pending {
   color: #b1b1b1;
   border-color: #b1b1b1;
@@ -109,7 +121,7 @@ body {
   .loader {
     width: 45px;
     aspect-ratio: 0.75;
-    --c: no-repeat linear-gradient(theme(colors.primary) 0 0);
+    --c: no-repeat linear-gradient(theme(colors.loader) 0 0);
     background:
       var(--c) 0% 50%,
       var(--c) 50% 50%,

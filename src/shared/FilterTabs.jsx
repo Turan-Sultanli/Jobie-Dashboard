@@ -18,8 +18,8 @@ function FilterTabs({ options, filterField }) {
           onClick={() => handleClick(tab.value)}
           key={tab.value}
           type="button"
-          className="bg-primary-300 text-primary py-[10px] px-[30px] text-base font-medium rounded-3xl
-            hover:text-white hover:bg-primary transition-all duration-300 disabled:text-white
+          className="bg-primary-300 dark:bg-button text-primary py-[10px] px-[30px] text-base font-medium rounded-3xl
+            hover:text-white dark:text-white hover:bg-primary transition-all duration-300 disabled:text-white
              disabled:bg-primary disabled:cursor-not-allowed focus:outline-primary capitalize whitespace-nowrap"
         >
           {tab.label}

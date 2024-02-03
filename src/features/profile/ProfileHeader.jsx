@@ -7,7 +7,7 @@ function ProfileHeader() {
 
   return (
     <div className="flex justify-between items-center flex-wrap ">
-      <h3 className="font-semibold text-2xl leading-9">Edit Profile</h3>
+      <h3 className="font-semibold text-2xl leading-9 dark:text-white">Edit Profile</h3>
       <div className="flex items-center flex-wrap xl:gap-16 lg:gap-12 md:gap-8 sm:gap-4 gap-2">
         <div className="whitespace-nowrap">
           <SwitchBtn

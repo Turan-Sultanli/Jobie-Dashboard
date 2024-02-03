@@ -6,13 +6,13 @@ function RangeInputRow({ children, label }) {
 
   return (
     <div className="flex items-center gap-7">
-      <span className="grid min-h-[62px] min-w-[62px]  place-content-center rounded-full border border-gray-200  text-base font-semibold text-primary">
+      <span className="grid min-h-[62px] min-w-[62px]  place-content-center rounded-full border border-gray-200  text-base font-semibold dark:text-gray-200 text-primary">
         {value}%
       </span>
       <div className="flex grow flex-col gap-4">
         <label
           htmlFor={htmlFor}
-          className="text-base font-medium text-gray-750"
+          className="text-base font-medium text-gray-750 dark:text-gray-200"
         >
           {label}
         </label>

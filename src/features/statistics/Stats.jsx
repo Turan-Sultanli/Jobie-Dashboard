@@ -59,10 +59,10 @@ function Stats() {
 function Stat({ extra = null, stat }) {
   const { value, icon, title } = stat;
   return (
-    <article className="rounded-[38px] bg-white p-[26px_32px_28px_26px] flex flex-col justify-between min-h-[180px]">
+    <article className="rounded-[38px] bg-card p-[26px_32px_28px_26px] flex flex-col justify-between min-h-[180px]">
       <div>
-        <h6 className="text-base text-[#414141]">{title}</h6>
-        <p className="text-3xl font-semibold">
+        <h6 className="text-base text-[#414141] dark:text-gray-300">{title}</h6>
+        <p className="text-3xl font-semibold dark:text-white">
           {formatNumbers(value, { notation: "compact" })}
         </p>
       </div>

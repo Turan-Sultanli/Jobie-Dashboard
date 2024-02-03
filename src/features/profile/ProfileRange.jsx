@@ -10,12 +10,12 @@ function ProfileRange() {
   return (
     <div>
       <div className="flex items-center justify-between">
-        <h4 className="relative mb-2 text-lg font-semibold uppercase md:mb-3 lg:mb-5 xl:mb-7">
+        <h4 className="relative mb-2 text-lg font-semibold uppercase md:mb-3 lg:mb-5 xl:mb-7 dark:text-gray-100">
           Skills
         </h4>
         <button
           type="button"
-          className="border-none bg-transparent text-lg font-semibold text-primary outline-transparent"
+          className="border-none bg-transparent text-lg font-semibold text-primary outline-transparent dark:text-gray-100"
         >
           + Add new Skills
         </button>

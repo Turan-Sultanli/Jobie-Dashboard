@@ -7,29 +7,29 @@ function Job({ job }) {
 
   return (
     <Link>
-      <article className="flex h-full flex-col rounded-[20px] bg-white p-[30px] shadow-[0px_4px_0px_0px_rgba(62,73,84,0.04)] hover:shadow-[0px_12px_23px_0px_rgba(0,0,0,0.10)] ">
+      <article className="flex h-full flex-col rounded-[20px] bg-card p-[30px] shadow-[0px_4px_0px_0px_rgba(62,73,84,0.04)] hover:shadow-[0px_12px_23px_0px_rgba(0,0,0,0.10)] ">
         <div className="flex flex-wrap items-center justify-between gap-1">
           <div >
-            <h5 className="mb-2 text-base font-medium text-gray-400">
+            <h5 className="mb-2 text-base font-medium text-gray-400 dark:text-gray-200">
               {company.name}
             </h5>
-            <h3 className=" text-xl font-medium">{job.name}</h3>
+            <h3 className=" text-xl font-medium dark:text-white">{job.name}</h3>
           </div>
           <span >
             <Logo src={company.logo} w={60} h={60} />
           </span>
         </div>
         <div className="my-5">
-          <p className="text-base font-medium text-primary">
+          <p className="text-base font-medium text-primary dark:text-gray-300">
             <span>{formatCurrency(job.min_salary)}</span> - <span>{formatCurrency(job.max_salary)}</span>
           </p>
-          <p className="mt-6 text-sm text-gray-900">{truncate(job.about)}</p>
+          <p className="mt-6 text-sm text-gray-900 dark:text-gray-300">{truncate(job.about)}</p>
         </div>
         <div className="mt-auto flex flex-wrap items-center justify-between">
-          <p className="rounded-[50px] bg-primary-300 p-[10px_20px] text-base font-medium uppercase leading-6 text-primary">
+          <p className="rounded-[50px] bg-primary-300 dark:bg-button dark:text-white p-[10px_20px] text-base font-medium uppercase leading-6 text-primary">
             {job.position_type}
           </p>
-          <p className="text-base font-medium">{company.location}</p>
+          <p className="text-base font-medium dark:text-white" >{company.location}</p>
         </div>
       </article>
     </Link>

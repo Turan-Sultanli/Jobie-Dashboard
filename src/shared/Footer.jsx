@@ -8,7 +8,7 @@ function Footer({total, variant}) {
 
   return (
     <footer className="flex justify-between items-center flex-wrap gap-2 mt-12">
-      <p className="text-base font-medium text-[#3E4954]">
+      <p className="text-base font-medium text-[#3E4954] dark:text-white">
         Showing {pageSize} from {total} data
       </p>
       <Pagination total={total} variant={variant} />

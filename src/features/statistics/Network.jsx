@@ -1,5 +1,7 @@
 import Dots from "../../assets/icons/Dots";
 import Title from "../../shared/Title";
+import {useDarkMode} from "../../contexts/ThemeProvider"
+
 import {
   PieChart,
   Pie,
@@ -40,10 +42,10 @@ const renderLegend = (props) => {
             />
 
             <div>
-              <span className="text-sm font-medium capitalize text-gray-900">
+              <span className="text-sm font-medium capitalize text-gray-900 dark:text-gray-100">
                 {entry.value}
               </span>
-              <p className="text-xl font-semibold text-black">
+              <p className="text-xl font-semibold text-black dark:text-gray-100">
                 {formatNumbers(payload.value, { maximumFractionDigits: 0 })}
                 {payload.name}
               </p>
@@ -60,8 +62,10 @@ const COLORS = ["#FFAB2D", "#374C98"];
 function Network() {
   const isAboveSmallScreens = useMediaQuery("(min-width: 768px)");
 
+  const {isDarkMode} = useDarkMode()
+
   return (
-    <article className="rounded-[20px] bg-white p-[36px_36px_42px] lg:col-[3/-1] lg:row-[4/5] xl:col-[4/-1] xl:row-[3/4]">
+    <article className="rounded-[20px] bg-card p-[36px_36px_42px] lg:col-[3/-1] lg:row-[4/5] xl:col-[4/-1] xl:row-[3/4]">
       <div className="mb-2 flex items-center justify-between">
         <Title>Network</Title>
         <button>
@@ -81,6 +85,7 @@ function Network() {
               layout={isAboveSmallScreens ? "vertical" : "horizontal"}
               verticalAlign={isAboveSmallScreens ? "middle" : "top"}
               align="left"
+              
             />
             <Pie
               data={data}
@@ -97,7 +102,7 @@ function Network() {
                 position="center"
                 style={{
                   textAnchor: "middle",
-                  fill: "black",
+                  fill: isDarkMode ? "#fff" : "#000",
                   fontWeight: 600,
                 }}
               />

@@ -36,8 +36,8 @@ function Pagination({ total, variant }) {
         <button
           onClick={() => handleSelectPage(page)}
           disabled={currentPage === page}
-          className="h-[52px] w-[62px] rounded-[60px] border-none bg-primary-300 text-lg font-medium text-primary
-        hover:bg-primary hover:text-white disabled:cursor-not-allowed disabled:bg-primary disabled:text-white "
+          className="h-[52px] w-[62px] rounded-[60px] border-none bg-primary-300 dark:bg-button  text-lg font-medium text-primary
+        hover:bg-primary hover:text-white disabled:cursor-not-allowed disabled:bg-primary disabled:text-white dark:text-white "
         >
           {page}
         </button>
@@ -46,22 +46,22 @@ function Pagination({ total, variant }) {
   });
 
   return (
-    <div className="flex flex-wrap items-center gap-4">
+    <div className="flex flex-wrap items-center gap-4 ">
       <button
         onClick={prevPage}
-        className="flex flex-wrap items-center gap-[10px] rounded-[60px] border-none bg-white px-6 py-3 text-lg font-medium text-primary
-      hover:bg-primary hover:text-white [&:hover_path]:stroke-white "
+        className="dark:bg-button flex flex-wrap items-center gap-[10px] rounded-[60px] border-none bg-white px-6 py-3 text-lg font-medium text-primary
+      hover:bg-primary hover:text-white [&:hover_path]:stroke-white  dark:text-gray-200"
       >
         <PaginationChevron />
         {isAboveMediumScreens && "Previous"}
       </button>
-      <ul className="hidden flex-wrap overflow-hidden rounded-[60px] bg-primary-300 md:flex">
+      <ul className="hidden flex-wrap overflow-hidden rounded-[60px] dark:bg-button bg-primary-300 md:flex">
         {pages}
       </ul>
       <button
         onClick={nextPage}
-        className="flex flex-wrap items-center gap-[10px] rounded-[60px] border-none bg-white px-5 py-3 text-lg font-medium text-primary
-      hover:bg-primary hover:text-white [&:hover_path]:stroke-white [&_svg]:rotate-180"
+        className="flex flex-wrap items-center gap-[10px] rounded-[60px] border-none bg-white dark:bg-button px-5 py-3 text-lg font-medium text-primary
+      hover:bg-primary hover:text-white [&:hover_path]:stroke-white [&_svg]:rotate-180 dark:text-gray-200"
       >
         {isAboveMediumScreens && "Next"}
 

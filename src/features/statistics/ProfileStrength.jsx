@@ -75,9 +75,10 @@ const renderLegend = (props) => {
     };
   });
 
+
   return (
     <div className="mt-4 pl-6">
-      <h4 className="mb-2 text-base font-medium capitalize">Legend</h4>
+      <h4 className="mb-2 text-base font-medium capitalize text-gray-100">Legend</h4>
       <ul className="mt-2 flex flex-col gap-4 ">
         {payload?.map((entry, index) => {
           const {
@@ -93,7 +94,7 @@ const renderLegend = (props) => {
                 className={`min-h-6 min-w-8 rounded-xl custom-legend-${entry.dataKey} `}
               />
 
-              <span className="whitespace-nowrap text-lg font-medium capitalize text-black">
+              <span className="whitespace-nowrap text-lg font-medium capitalize text-black dark:text-gray-100">
                 {percentage.toFixed(0)} %
               </span>
               <p className="whitespace-nowrap text-sm font-medium capitalize text-gray-200">
@@ -110,8 +111,10 @@ const renderLegend = (props) => {
 function ProfileStrength() {
   const isAboveSmallScreens = useMediaQuery("(min-width: 768px)");
 
+
+
   return (
-    <article className="rounded-[20px] bg-white p-[36px_34px_32px] lg:col-[1/3]  lg:row-[1/3] xl:col-[1/4] xl:row-[1/3]">
+    <article className="rounded-[20px] bg-card p-[36px_34px_32px] lg:col-[1/3]  lg:row-[1/3] xl:col-[1/4] xl:row-[1/3]">
       <div className="mb-2 flex items-center justify-between">
         <Title>Profile Strength</Title>
         <button>
@@ -150,6 +153,7 @@ function ProfileStrength() {
               }}
               verticalAlign={isAboveSmallScreens ? "middle" : "bottom"}
               align={isAboveSmallScreens ? "right" : "left"}
+              
             />
 
             <Bar

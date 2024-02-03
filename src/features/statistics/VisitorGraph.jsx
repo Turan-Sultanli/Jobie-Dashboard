@@ -9,6 +9,7 @@ import {
   Tooltip,
   ResponsiveContainer,
 } from "recharts";
+import Title from "../../shared/Title";
 
 const data = [
   {
@@ -74,27 +75,29 @@ const data = [
 ];
 
 function VisitorGraph() {
-
   return (
-    <article className="rounded-[38px] h-fit bg-white p-[26px_31px_29px_21px] lg:col-[1/3] lg:row-[3/4] xl:col-[1/4] xl:row-[3/4]">
-      <div className="flex items-center justify-between gap-2 flex-wrap">
+    <article className="bg-card h-fit rounded-[38px] p-[26px_31px_29px_21px] lg:col-[1/3] lg:row-[3/4] xl:col-[1/4] xl:row-[3/4]">
+      <div className="flex flex-wrap items-center justify-between gap-2">
         <div>
-          <h4 className="text-xl font-medium whitespace-nowrap">Visitor Graph</h4>
+          <Title className="whitespace-nowrap text-xl font-medium">
+            Visitor Graph
+          </Title>
         </div>
-        <div className="flex justify-between flex-wrap gap-2 whitespace-nowrap">
+        <div className="flex flex-wrap justify-between gap-2 whitespace-nowrap">
           <SwitchBtn label="Show Details" id={"details"} />
           <div
-            className="relative [&_svg:first-child]:bottom-4 [&_svg:first-child]:left-4 [&_svg:last-child>path]:stroke-primary
-          [&_svg:last-child]:right-4 [&_svg:last-child]:top-1/2 [&_svg:last-child]:-translate-y-1/2 [&_svg]:absolute  "
+            className="relative "
           >
             <select
-              className="lg:h-12 md:h-11 h-10 w-[166px] appearance-none  rounded-[48px] border border-solid border-primary-300 bg-transparent
-            pl-[22px] text-base font-medium text-gray-700 focus:outline-primary"
+              className="h-10 w-[166px] appearance-none rounded-[48px] border  border-solid border-primary-300 bg-transparent pl-[22px] text-base
+            font-medium text-gray-700 focus:outline-primary md:h-11 lg:h-12 dark:text-gray-200"
             >
               <option>Newest</option>
               <option>Oldest</option>
             </select>
-            <Chevron />
+            <span className="absolute lg:top-[2px] top-0 translate-y-1/2 right-4">
+              <Chevron />
+            </span>
           </div>
         </div>
       </div>

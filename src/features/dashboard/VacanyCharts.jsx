@@ -72,7 +72,8 @@ function VacanyCharts({timePeriod}) {
             axisLine={false}
             tickLine={false}
             dy={16}
-            tickFormatter={(n) => `${tickState.unit} ${n}`}
+            tickFormatter={(n) => `${tickState.unit} ${n}` 
+          }
           />
           <YAxis axisLine={false} tickLine={false} dx={-10} />
           <Tooltip />
