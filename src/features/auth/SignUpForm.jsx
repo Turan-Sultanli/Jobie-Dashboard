@@ -1,5 +1,5 @@
-import AuthHeader from "./authHeader";
-import AuthFooter from "./authFooter";
+import AuthHeader from "./AuthHeader";
+import AuthFooter from "./AuthFooter";
 import { useState } from "react";
 import { useSignup } from "./useSignUp";
 
